@@ -14,6 +14,8 @@ public class ConsumerService {
     @TxTransaction(isStart = true)
     @Transactional
     public String getData(){
-        return restTemplate.getForEntity("http://service-worker/hello",String.class).getBody();
+        restTemplate.getForEntity("http://service-worker/index.do",String.class).getBody();
+        restTemplate.getForEntity("http://service-worker/roles.do",String.class).getBody();
+        return "111";
     }
 }
